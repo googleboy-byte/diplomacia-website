@@ -45,11 +45,26 @@ export default function Hero() {
                 className="relative z-10 text-center px-4 max-w-5xl mx-auto transition-transform duration-500 ease-out"
                 style={{ transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)` }}
             >
+                {/* <div className="flex flex-col items-center mb-12 animate-fade-in-up">
+                    <Image
+                        src="/assets/diplomacialogo.png"
+                        alt="Diplomacia Emblem"
+                        width={100}
+                        height={100}
+                        className="mb-8 opacity-90 contrast-125"
+                    />
+
+                </div> */}
+
+
                 <div className="overflow-hidden mb-6">
                     <p className="text-accent uppercase tracking-[0.5em] text-xs md:text-sm animate-fade-in-up">
                         Presenting
                     </p>
                 </div>
+
+                {/* a centered vertical golden line here please */}
+                <div className="w-[1px] h-12 bg-accent/30 mx-auto" />
 
                 <h1 className="text-6xl md:text-9xl mb-8 leading-tight font-serif italic animate-fade-in-up">
                     Diplomacia
@@ -61,11 +76,26 @@ export default function Hero() {
                     The World on Trial
                 </p>
 
-                <div className="mt-20">
-                    <button className="px-12 py-4 border border-accent/30 hover:bg-accent hover:border-accent transition-all duration-500 flex items-center gap-4 mx-auto group">
-                        <span className="text-xs uppercase tracking-[0.3em] text-accent group-hover:text-black group-hover:font-bold transition-all duration-500">Join Us</span>
-                        <div className="w-8 h-[1px] bg-accent group-hover:bg-black group-hover:w-12 transition-all duration-500" />
-                    </button>
+                {/* add another button here and make them side by side
+                the next button should say about us */}
+
+                {/* make sure the buttons are side by side and centered */}
+
+                {/* make the buttons have a little lesser width please */}
+                <div className="flex justify-center items-center gap-4 mx-auto">
+                    <div className="mt-20">
+                        <button className="px-8 py-4 border border-accent/30 hover:bg-accent hover:border-accent transition-all duration-500 flex items-center gap-4 mx-auto group">
+                            <span className="text-xs uppercase tracking-[0.3em] text-accent group-hover:text-black group-hover:font-bold transition-all duration-500">Join Us</span>
+                            <div className="w-8 h-[1px] bg-accent group-hover:bg-black group-hover:w-12 transition-all duration-500" />
+                        </button>
+                    </div>
+
+                    <div className="mt-20">
+                        <button className="px-8 py-4 border border-accent/30 hover:bg-accent hover:border-accent transition-all duration-500 flex items-center gap-4 mx-auto group">
+                            <span className="text-xs uppercase tracking-[0.3em] text-accent group-hover:text-black group-hover:font-bold transition-all duration-500">About Us</span>
+                            <div className="w-8 h-[1px] bg-accent group-hover:bg-black group-hover:w-12 transition-all duration-500" />
+                        </button>
+                    </div>
                 </div>
 
             </div>

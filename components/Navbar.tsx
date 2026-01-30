@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -16,9 +17,21 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/80 backdrop-blur-md py-4 shadow-xl" : "bg-transparent py-8"}`}>
-            <div className="max-w-[1400px] mx-auto px-8 md:px-16 flex items-center justify-between">
-                <Link href="/" className="text-2xl font-serif tracking-widest gold-text uppercase">
-                    Diplomacia
+            <div className="max-w-[1400px] mx-auto px-8 md:px-16 flex items-center justify-between relative">
+                <Link href="/" className="flex items-center gap-6 group">
+                    <div className="absolute -top-6 -left-4 md:-left-8 w-32 md:w-40 transition-transform duration-500 group-hover:scale-105">
+                        <Image
+                            src="/assets/diplomacialogo.png"
+                            alt="Diplomacia Logo"
+                            width={160}
+                            height={160}
+                            className="opacity-90 contrast-125 w-full h-auto"
+                            priority
+                        />
+                    </div>
+                    <span className="text-2xl font-serif tracking-widest gold-text uppercase hidden sm:block ml-32 md:ml-40">
+                        Diplomacia
+                    </span>
                 </Link>
 
                 <div className="hidden md:flex items-center gap-12 text-sm uppercase tracking-[0.2em] font-light">

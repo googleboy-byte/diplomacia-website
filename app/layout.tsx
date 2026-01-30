@@ -15,7 +15,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Diplomacia - The World on Trial",
   description: "Official website of Diplomacia Society. Elegance, Depth, and Subtlety.",
+  icons: {
+    icon: "/assets/diplomacialogo.png",
+  },
 };
+
 
 export default function RootLayout({
   children,
