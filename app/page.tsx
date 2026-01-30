@@ -90,8 +90,20 @@ export default function Home() {
       </section>
 
       {/* Pillars Section */}
-      <section id="initiatives" className="py-40 px-8 md:px-16 bg-background relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section id="initiatives" className="py-40 px-8 md:px-16 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://i.imgur.com/otf9Hhc.jpg"
+            alt="Diplomatic Background"
+            fill
+            className="object-cover opacity-50"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/40" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
             <div className="space-y-4">
               <h2 className="text-sm uppercase tracking-[0.5em] text-accent font-light">Cardinal Pillars</h2>
@@ -120,11 +132,11 @@ export default function Home() {
                 desc: "A perspective forum featuring diverse geopolitical themes—from Genz Geopolitics to Feminism Without Colonialism."
               }
             ].map((item, idx) => (
-              <div key={idx} className="group p-8 bg-midnight/20 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:shadow-[0_0_50px_rgba(212,175,55,0.05)]">
-                <p className="text-[10px] uppercase tracking-[0.4em] text-accent/60 mb-8 font-light italic">{item.subtitle}</p>
-                <h3 className="text-2xl font-serif mb-6">{item.title}</h3>
-                <div className="w-8 h-[1px] bg-accent/30 mb-8 group-hover:w-full transition-all duration-700" />
-                <p className="text-sm font-light text-foreground/50 leading-loose uppercase tracking-widest">{item.desc}</p>
+              <div key={idx} className="group p-8 bg-midnight/80 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 hover:shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-accent mb-8 font-light italic">{item.subtitle}</p>
+                <h3 className="text-2xl font-serif mb-6 text-white/95">{item.title}</h3>
+                <div className="w-8 h-[1px] bg-accent/40 mb-8 group-hover:w-full transition-all duration-700" />
+                <p className="text-sm font-light text-foreground/60 leading-loose uppercase tracking-widest">{item.desc}</p>
               </div>
             ))}
           </div>
