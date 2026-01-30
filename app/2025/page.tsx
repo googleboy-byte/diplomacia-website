@@ -9,44 +9,44 @@ const events = [
     {
         title: "Paradox in Margazhi - Model United Nations",
         date: "January 4-6, 2025",
-        description: "A signature cultural event for IITM BS students. Organized with coordination between Diplomacia Society and multiple student bodies including Kanha House, Sahityika, and WYZ Kids.",
-        stats: "200+ Registrations",
+        description: "Diplomacy in Action: Protecting Minority Rights. A signature Model United Nations conference held in collaboration with Kanha House, WYZ Kids, and Sahityika.",
+        stats: "200+ Registrations • Online Technical Coordination",
         poster: "/assets/2025_eventposters/iitm.kanhahouse-29-01-2026-0001.jpg",
-    },
-    {
-        title: "Special Session on National Youth Day",
-        date: "January 12, 2025",
-        description: "In collaboration with Sahara Society. Featured Swami Atmashraddhanandaji Maharaj (Secretary, Ramakrishna Mission Ashrama, Kanpur).",
-        stats: "60+ Audience",
-        poster: "/assets/2025_eventposters/iitm_diplomacia-29-01-2026-0001.webp",
     },
     {
         title: "Echoes of Dispute",
         date: "January 24-25, 2025",
-        description: "A parliamentary-style debate competition in collaboration with Namdapha House and Namdapha’s Fearless Orators Club.",
-        stats: "100+ Registrations • 70+ Participation",
+        description: "Parliamentary-style debate competition in collaboration with Namdapha House and Fearless Orators Club. Featured a prize pool of ₹4,000.",
+        stats: "100+ Registrations • 70+ Active Participants",
         poster: "/assets/2025_eventposters/thefearlessodyssey-29-01-2026-0001.jpg",
     },
     {
-        title: "Republic Day Open Mic Event",
+        title: "Gantantra Ek Shaam - Republic Day Open Mic",
         date: "January 26, 2025",
-        description: "In collaboration with Bandipur and Gir House, and Sahityika, Akord, and Bandipur’s Samvaah Club.",
-        stats: "100+ Registrations • 40+ Participation",
+        description: "A cultural open mic celebrating Republic Day. Collaborative effort with Bandipur & Gir House, Sahityika, Akord, and Samvaah Club.",
+        stats: "100+ Registrations • 40+ Performance Participants",
         poster: "/assets/2025_eventposters/bandipur_iitm-29-01-2026-0001.webp",
     },
     {
-        title: "Global Series",
-        date: "2025",
-        description: "A three-part speaker series held in collaboration with Project DemoLeague of Pioneers Youth and Climate Cadets Collective.",
-        stats: "115+ Attendees per session",
+        title: "Global Series - Minds in Motion",
+        date: "October – November 2025",
+        description: "Three-part series: GenZ & Geopolitics, Sunlight on Demand, and Feminism Without Colonialism. Collaborative geopolitical discourse.",
+        stats: "115+ Average Attendees • Project DemoLeague Partnership",
         poster: "/assets/2025_eventposters/iitm_diplomacia-29-01-2026-0002.webp",
     },
     {
         title: "Data x Diplomatics",
         date: "July 19-26, 2025",
-        description: "Explored the intersection of data analytics and diplomacy, examining how quantitative indicators shape policy narratives and national image.",
-        stats: "100+ Attendees per session",
+        description: "Virtual session with Ayush Shukla on how quantitative indicators and data analytics shape policy narratives and national image.",
+        stats: "100+ Attendees • Where Policy Meets Probability",
         poster: "/assets/2025_eventposters/iitm_diplomacia-29-01-2026-0003.webp",
+    },
+    {
+        title: "Special Session on National Youth Day",
+        date: "January 12, 2025",
+        description: "Featured Swami Atmashraddhanandaji Maharaj (Ramakrishna Mission Ashrama). Interactive debate on youth's role in achieving SDGs, in collaboration with Sahara Society.",
+        stats: "60+ Audience • Enlightening Speaker Session",
+        poster: "/assets/2025_eventposters/nationalyouthdayposter.png",
     }
 ];
 
@@ -82,7 +82,7 @@ export default function Events2025() {
                                     src={event.poster}
                                     alt={event.title}
                                     fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
                                 />
                                 {/* Visual Overlay on Hover */}
                                 <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm flex items-center justify-center p-12">
