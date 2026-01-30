@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 
@@ -30,13 +31,59 @@ export default function Home() {
           </div>
 
           <div className="flex-1 relative aspect-[4/5] w-full max-w-md group">
-            <div className="absolute inset-0 border border-accent/10 translate-x-6 translate-y-6 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-midnight/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center p-12 text-center overflow-hidden">
+            <div className="absolute inset-0 border border-accent/10 translate-x-6 translate-y-6 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700 z-10" />
+            <div className="absolute inset-0 bg-midnight/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center p-12 text-center overflow-hidden z-20">
+              {/* Collaborator Logos - grouped tightly inside the card */}
+
+              {[
+                { file: "akord_iitm-29-01-2026-0001.jpg", name: "AKORD Music Society" },
+                { file: "girhouse_iitm-29-01-2026-0001.jpg", name: "Gir House" },
+                { file: "housepichavaram-29-01-2026-0001.jpg", name: "Pichavaram House" },
+                { file: "iitm.kanhahouse-29-01-2026-0002.jpg", name: "Kanha House" },
+                { file: "namdapha_iitm-29-01-2026-0001.jpg", name: "Namdapha House" },
+                { file: "orator_iiitn-29-01-2026-0001.jpg", name: "Veritas Oratory Society" },
+                { file: "sahara_iitmbs-29-01-2026-0001.jpg", name: "SAHARA - Social Welfare" },
+                { file: "sahityika_iitm-29-01-2026-0001.jpg", name: "Sahityika: Literary Society" },
+                { file: "samvaah_official-29-01-2026-0001.jpg", name: "Samvaah" },
+                { file: "thefearlessodyssey-29-01-2026-0001.jpg", name: "The Fearless Odyssey" },
+                { file: "wyzkids.iitmbs-29-01-2026-0001.jpg", name: "WYZ Kids: Quiz Club" }
+              ].map((item, i) => (
+                <div
+                  key={item.file}
+                  className="absolute animate-fade-in-up transition-transform duration-1000 group/logo"
+                  style={{
+                    top: `${50 + 40 * Math.sin((i * 2 * Math.PI) / 11)}%`,
+                    left: `${45 + 40 * Math.cos((i * 2 * Math.PI) / 11)}%`,
+                    transform: 'translate(-50%, -50%)',
+                    animationDelay: `${i * 100}ms`
+                  }}
+                >
+                  <div className="relative group/tooltip">
+                    <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden border border-white/20 bg-midnight/50 backdrop-blur-sm opacity-80 group-hover/logo:opacity-100 transition-all duration-700 shadow-lg group-hover/logo:scale-110">
+                      <Image
+                        src={`/assets/collaborators/${item.file}`}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Tooltip */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 bg-background/95 border border-white/10 backdrop-blur-md rounded-full opacity-0 group-hover/logo:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-30">
+                      <p className="text-[8px] uppercase tracking-widest text-accent font-light">{item.name}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
               <div className="absolute -top-20 -left-20 w-64 h-64 bg-accent/5 blur-[100px] rounded-full" />
               <span className="text-[12rem] font-serif italic opacity-5 select-none absolute -bottom-10 -right-10">D</span>
-              <p className="text-xs uppercase tracking-[0.6em] font-light mb-8 opacity-40">Est. MMXXIV</p>
-              <h4 className="text-2xl font-serif mb-4">The Standard of Excellence</h4>
-              <p className="text-[10px] uppercase tracking-[0.3em] font-light text-accent italic">Elegance • Depth • Strategy</p>
+              <p className="text-xs uppercase tracking-[0.6em] font-light mb-8 opacity-40">Est. 2024</p>
+              <h4 className="text-2xl font-serif mb-4">Collaborators</h4>
+              {/* <p className="text-[10px] uppercase tracking-[0.4em] text-foreground/40 mb-8 max-w-[200px] leading-relaxed">
+                Strategic alliances with premier academic and diplomatic institutions.
+              </p> */}
+              <p className="text-[10px] uppercase tracking-[0.3em] font-light text-accent italic">Alliances with fellow societies</p>
             </div>
           </div>
         </div>

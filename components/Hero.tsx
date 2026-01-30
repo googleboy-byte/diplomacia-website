@@ -84,10 +84,15 @@ export default function Hero() {
                 {/* make the buttons have a little lesser width please */}
                 <div className="flex justify-center items-center gap-4 mx-auto">
                     <div className="mt-20">
-                        <button className="px-8 py-4 border border-accent/30 hover:bg-accent hover:border-accent transition-all duration-500 flex items-center gap-4 mx-auto group">
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfqMPSXA2tEv3SdxEqTY-28Gz4IDu3J-FMeU00byfEDmBL-OQ/viewform?usp=dialog"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-8 py-4 border border-accent/30 hover:bg-accent hover:border-accent transition-all duration-500 flex items-center gap-4 mx-auto group"
+                        >
                             <span className="text-xs uppercase tracking-[0.3em] text-accent group-hover:text-black group-hover:font-bold transition-all duration-500">Join Us</span>
                             <div className="w-8 h-[1px] bg-accent group-hover:bg-black group-hover:w-12 transition-all duration-500" />
-                        </button>
+                        </a>
                     </div>
 
                     <div className="mt-20">

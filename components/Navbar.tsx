@@ -17,11 +17,11 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: "Featured Events", href: "#featured-events" },
+        { name: "Featured Events", href: "/#featured-events" },
         { name: "2025", href: "/2025" },
         { name: "Membership", href: "/membership" },
-        { name: "Team", href: "#team" },
-        { name: "FAQ", href: "#faq" },
+        { name: "Team", href: "/#team" },
+        { name: "FAQ", href: "/#faq" },
     ];
 
     return (
