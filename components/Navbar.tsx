@@ -39,9 +39,14 @@ export default function Navbar() {
                                 priority
                             />
                         </div>
-                        <span className="text-2xl font-serif tracking-widest gold-text uppercase hidden sm:block ml-36 md:ml-48">
-                            Diplomacia
-                        </span>
+                        <div className="flex flex-col items-center ml-36 md:ml-48">
+                            <span className="text-2xl font-serif tracking-widest gold-text uppercase hidden sm:block">
+                                Diplomacia
+                            </span>
+                            <span className="text-[10px] tracking-[0.3em] text-foreground/80 uppercase hidden sm:block -mt-1">
+                                (IITM BS Society)
+                            </span>
+                        </div>
                     </Link>
 
                     <div className="hidden md:flex items-center gap-12 text-sm uppercase tracking-[0.2em] font-light">
