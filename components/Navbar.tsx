@@ -21,7 +21,7 @@ export default function Navbar() {
         { name: "2025", href: "/2025" },
         { name: "Membership", href: "/membership" },
         { name: "Team", href: "/#team" },
-        { name: "FAQ", href: "/#faq" },
+        { name: "FAQ", href: "/faq" },
     ];
 
     return (
