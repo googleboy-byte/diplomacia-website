@@ -30,17 +30,16 @@ export default function EventsSlider() {
             </div>
 
             <div className="relative z-10 min-h-[calc(100vh-6rem)] flex flex-col items-center justify-center px-8 md:px-16 py-8">
-                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-6xl w-full">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl w-full">
 
                     {/* Poster Section - Optimized size to fit viewport */}
-                    <div className="flex-1 w-full max-w-[200px] md:max-w-[280px] aspect-[4/5] relative group animate-fade-in shadow-2xl">
-                        <div className="absolute -inset-3 border border-accent/20 translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
+                    <div className="w-full max-w-[200px] md:max-w-[280px] aspect-[4/5] relative group animate-fade-in shadow-2xl shrink-0">
                         <div className="relative h-full w-full border border-white/10 overflow-hidden bg-midnight">
                             <Image
                                 src={event.thumbnail}
                                 alt={event.title}
                                 fill
-                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                className="object-fill transition-transform duration-1000 group-hover:scale-105"
                                 priority
                             />
                         </div>
