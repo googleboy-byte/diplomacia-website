@@ -1,8 +1,10 @@
 "use client"
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ParticleSystem from "@/components/ParticleSystem";
 
 interface FAQItem {
     question: string;
@@ -70,12 +72,30 @@ export default function FAQPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-black text-foreground relative overflow-hidden">
             <Navbar />
 
-            <div className="pt-32 pb-16 px-8 md:px-16 max-w-4xl mx-auto">
+            {/* Background Elements */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/hero-bg.png"
+                    alt="Background"
+                    fill
+                    className="object-cover opacity-30"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90" />
+            </div>
+
+            <ParticleSystem />
+
+            {/* Decorative Gradients */}
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full opacity-30 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-900/10 blur-[150px] rounded-full opacity-30 pointer-events-none" />
+
+            <div className="relative z-10 pt-32 pb-16 px-8 md:px-16 max-w-4xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-16 space-y-4">
+                <div className="text-center mb-16 space-y-4 animate-fade-in-up">
                     <p className="text-accent uppercase tracking-[0.5em] text-[10px]">Frequently Asked</p>
                     <h1 className="text-4xl md:text-6xl font-serif italic gold-text leading-tight">Questions</h1>
                     <div className="h-[1px] w-24 bg-accent/30 mx-auto mt-6" />
@@ -85,22 +105,22 @@ export default function FAQPage() {
                 </div>
 
                 {/* FAQ Accordion */}
-                <div className="space-y-4">
+                <div className="space-y-4 animate-fade-in-up delay-200">
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="border border-white/10 bg-midnight/50 backdrop-blur-sm hover:border-accent/40 transition-all duration-300"
+                            className="border border-white/10 bg-black/40 backdrop-blur-md hover:border-accent/40 transition-all duration-300 group"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full p-6 md:p-8 flex items-center justify-between text-left group"
+                                className="w-full p-6 md:p-8 flex items-center justify-between text-left"
                             >
                                 <h3 className="text-lg md:text-xl font-serif text-foreground/90 group-hover:text-accent transition-colors pr-4">
                                     {faq.question}
                                 </h3>
                                 <div className={`shrink-0 w-6 h-6 relative transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                                    <div className="absolute top-1/2 left-0 w-full h-[1px] bg-accent" />
-                                    <div className={`absolute top-0 left-1/2 w-[1px] h-full bg-accent transition-opacity duration-300 ${openIndex === index ? 'opacity-0' : 'opacity-100'}`} />
+                                    <div className="absolute top-1/2 left-0 w-full h-[1px] bg-accent/50 group-hover:bg-accent transition-colors" />
+                                    <div className={`absolute top-0 left-1/2 w-[1px] h-full bg-accent/50 group-hover:bg-accent transition-colors duration-300 ${openIndex === index ? 'opacity-0' : 'opacity-100'}`} />
                                 </div>
                             </button>
 
@@ -108,10 +128,10 @@ export default function FAQPage() {
                                 className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                             >
                                 <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-                                    <div className="h-[1px] w-full bg-accent/20 mb-6" />
-                                    <p className="text-sm md:text-base font-light text-foreground/80 leading-relaxed">
+                                    <div className="h-[1px] w-full bg-accent/10 mb-6" />
+                                    <div className="text-sm md:text-base font-light text-foreground/70 leading-relaxed">
                                         {faq.answer}
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -119,13 +139,13 @@ export default function FAQPage() {
                 </div>
 
                 {/* Contact Section */}
-                <div className="mt-16 text-center p-8 border border-accent/20 bg-midnight/30 backdrop-blur-sm">
+                <div className="mt-16 text-center p-8 border border-accent/20 bg-black/40 backdrop-blur-md animate-fade-in-up delay-300">
                     <p className="text-sm font-light text-foreground/60 mb-4">
                         Still have questions?
                     </p>
-                    <p className="text-accent text-xs uppercase tracking-[0.3em]">
+                    <a href="mailto:diplomacia@study.iitm.ac.in" className="text-accent text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">
                         Reach out to us via student mail
-                    </p>
+                    </a>
                 </div>
             </div>
 
