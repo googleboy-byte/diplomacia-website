@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -159,10 +159,10 @@ function PosterDisplay({ posters, theme }: { posters: string[], theme: string })
 function HighlightedText({ text, highlights }: { text: string, highlights: { text: string, color: string }[] }) {
     if (!highlights || highlights.length === 0) return <>{text}</>;
 
-    let result: (string | JSX.Element)[] = [text];
+    let result: (string | ReactElement)[] = [text];
 
     highlights.forEach(highlight => {
-        const newResult: (string | JSX.Element)[] = [];
+        const newResult: (string | ReactElement)[] = [];
         result.forEach(part => {
             if (typeof part === 'string') {
                 const parts = part.split(highlight.text);
