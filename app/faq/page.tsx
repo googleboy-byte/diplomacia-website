@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleSystem from "@/components/ParticleSystem";
+import JoinModal from "@/components/JoinModal";
 
 interface FAQItem {
     question: string;
@@ -13,6 +14,7 @@ interface FAQItem {
 
 export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
 
     const faqs: FAQItem[] = [
         {
@@ -26,14 +28,28 @@ export default function FAQPage() {
         {
             question: "How to join?",
             answer: (
-                <a
-                    href="YOUR_GFORM_LINK_HERE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                >
-                    Click here to fill the membership form
-                </a>
+                <div className="space-y-3">
+                    <p className="text-white/80">
+                        To apply for membership, fill out our membership form:
+                    </p>
+                    <a
+                        href="YOUR_GFORM_LINK_HERE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-accent hover:underline font-medium"
+                    >
+                        Click here to apply for membership →
+                    </a>
+                    <p className="text-white/60 text-sm">
+                        For other inquiries or to connect with us:
+                    </p>
+                    <button
+                        onClick={() => setIsJoinModalOpen(true)}
+                        className="px-4 py-2 border border-accent/50 text-accent hover:bg-accent/10 transition-all text-sm"
+                    >
+                        View Contact Info
+                    </button>
+                </div>
             )
         },
         {
@@ -150,6 +166,8 @@ export default function FAQPage() {
             </div>
 
             <Footer />
+
+            <JoinModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
 
             <style jsx global>{`
                 .gold-text {
