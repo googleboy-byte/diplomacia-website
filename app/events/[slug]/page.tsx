@@ -32,7 +32,8 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
 
                 {/* Sessions Vertical Zig-Zag Layout */}
                 <div className="space-y-16 md:space-y-24">
-                    {event.sessions.map((session, index) => {
+                    {[...event.sessions].reverse().map((session, index) => {
+                        const actualIndex = event.sessions.length - 1 - index;
                         const isEven = index % 2 === 0;
 
                         return (
@@ -59,8 +60,8 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                                 {/* Session Info */}
                                 <div className={`w-full md:w-1/2 space-y-4 ${isEven ? 'md:pl-8' : 'md:pr-8'}`}>
                                     <div className="space-y-2">
-                                        <p className="text-accent uppercase tracking-[0.4em] text-[9px]">
-                                            Session {index + 1}
+                                        <p className="text-accent uppercase tracking-[0.4em] text-[10px] font-medium">
+                                            Session {actualIndex + 1}
                                         </p>
                                         <h3 className="text-2xl md:text-3xl font-serif italic text-accent leading-tight">
                                             {session.title}
@@ -75,6 +76,27 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                                     <p className="text-sm md:text-base font-light text-foreground/80 leading-relaxed">
                                         {session.description}
                                     </p>
+
+                                    {session.videoUrl && (
+                                        <div className="pt-2">
+                                            <a
+                                                href={session.videoUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group/link"
+                                            >
+                                                <span className="text-sm font-serif italic tracking-wider">Watch the event</span>
+                                                <svg
+                                                    className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         );
