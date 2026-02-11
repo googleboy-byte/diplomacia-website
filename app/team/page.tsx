@@ -16,7 +16,7 @@ export default function TeamPage() {
 
     const roleMembers = team.filter(member => {
         if (activeRole === "Founder") return member.role === "Founder";
-        if (activeRole === "Secretary") return member.role === "Secretary";
+        if (activeRole === "Secretary") return member.role.includes("Secretary");
         return member.role.includes(activeRole);
     });
 
