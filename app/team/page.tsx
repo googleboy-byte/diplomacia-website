@@ -12,11 +12,12 @@ export default function TeamPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const carouselRef = useRef<HTMLDivElement>(null);
 
-    const roles = ["Founder", "Secretary", "Documentation", "Event Research", "Creative Content"];
+    const roles = ["Founder", "Secretary", "Dep. Secretary", "Documentation", "Event Research", "Creative Content"];
 
     const roleMembers = team.filter(member => {
         if (activeRole === "Founder") return member.role === "Founder";
-        if (activeRole === "Secretary") return member.role.includes("Secretary");
+        if (activeRole === "Secretary") return member.role.includes("Secretary") && !member.role.includes("Dep. Secretary");
+        if (activeRole === "Dep. Secretary") return member.role.includes("Dep. Secretary");
         return member.role.includes(activeRole);
     });
 
