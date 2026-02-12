@@ -6,7 +6,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { featuredEvents } from "@/data/events";
 import { pastEvents } from "@/data/past_events";
-import { Instagram, Youtube, Linkedin, FileText, ArrowRight } from "lucide-react";
+import { Instagram, Youtube, Linkedin, FileText, ArrowRight, ChevronDown } from "lucide-react";
 
 export default function EventsSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -108,11 +108,6 @@ export default function EventsSlider() {
                 </div>
             )}
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 animate-bounce-slow opacity-40 hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                <span className="text-[8px] uppercase tracking-[0.4em] font-light">Scroll Explore</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent" />
-            </div>
 
             {/* Slider Progress Indicators */}
             <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-50 flex gap-4 md:gap-6">
@@ -148,16 +143,48 @@ export default function EventsSlider() {
                     -webkit-text-fill-color: transparent;
                 }
                 @keyframes bounce-slow {
-                    0%, 100% { transform: translate(-50%, 0); }
-                    50% { transform: translate(-50%, 10px); }
+                    0%, 100% { transform: translateY(-2px); }
+                    50% { transform: translateY(4px); }
+                }
+                @keyframes pulse-slow {
+                    0%, 100% { transform: scale(1); opacity: 0.4; }
+                    50% { transform: scale(1.1); opacity: 0.2; }
+                }
+                @keyframes ping-slow {
+                    0% { transform: scale(1); opacity: 0.6; }
+                    100% { transform: scale(1.6); opacity: 0; }
                 }
                 .animate-bounce-slow {
                     animation: bounce-slow 3s ease-in-out infinite;
                 }
+                .animate-pulse-slow {
+                    animation: pulse-slow 4s ease-in-out infinite;
+                }
+                .animate-ping-slow {
+                    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+                }
             `}</style>
 
+            {/* Scroll Indicator - Positioned between sections */}
+            <div className="relative z-50 flex justify-center -mb-6 translate-y-[-50%]">
+                <button
+                    onClick={() => document.getElementById('archive-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="relative flex items-center justify-center group cursor-pointer"
+                    aria-label="Scroll to Archive"
+                >
+                    {/* Ring animation */}
+                    <div className="absolute inset-0 w-12 h-12 border border-accent/20 rounded-full animate-ping-slow" />
+                    <div className="absolute inset-0 w-12 h-12 border border-accent/40 rounded-full animate-pulse-slow" />
+
+                    {/* Circle and Arrow */}
+                    <div className="w-12 h-12 rounded-full border border-white/10 bg-midnight/20 backdrop-blur-md flex items-center justify-center overflow-hidden hover:border-accent/50 transition-colors duration-500">
+                        <ChevronDown className="w-5 h-5 text-accent animate-bounce-slow" />
+                    </div>
+                </button>
+            </div>
+
             {/* Event Archive Section */}
-            <section className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-24 mb-24 border-t border-white/5">
+            <section id="archive-section" className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-24 mb-24 border-t border-white/5">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="space-y-4">
                         <p className="text-accent uppercase tracking-[0.5em] text-[10px]">Legacy of Excellence</p>
