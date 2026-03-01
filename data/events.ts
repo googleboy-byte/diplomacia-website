@@ -57,10 +57,10 @@ export const featuredEvents: FeaturedEvent[] = [
                 poster: "/assets/featured_events/minds_in_motion/session4/session4_poster.png",
                 videoUrl: "https://youtu.be/KxVZwjQW1BY",
                 certificates: [
+                    "/assets/featured_events/minds_in_motion/session4/certificates/1stposition.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/2ndposition.png",
                     "/assets/featured_events/minds_in_motion/session4/certificates/1.png",
                     "/assets/featured_events/minds_in_motion/session4/certificates/2.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/3.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/4.png",
                     "/assets/featured_events/minds_in_motion/session4/certificates/5.png",
                     "/assets/featured_events/minds_in_motion/session4/certificates/6.png",
                 ]
@@ -72,6 +72,8 @@ export const featuredEvents: FeaturedEvent[] = [
                 poster: "/assets/featured_events/minds_in_motion/session5/poster.jpeg",
                 videoUrl: "https://www.youtube.com/watch?v=L2d2GNLVzFY",
                 certificates: [
+                    "/assets/featured_events/minds_in_motion/session5/certificates/1stposition.png",
+                    "/assets/featured_events/minds_in_motion/session5/certificates/2ndposition.png",
                     "/assets/featured_events/minds_in_motion/session5/certificates/1.png",
                     "/assets/featured_events/minds_in_motion/session5/certificates/2.png",
                     "/assets/featured_events/minds_in_motion/session5/certificates/3.png",
@@ -79,8 +81,6 @@ export const featuredEvents: FeaturedEvent[] = [
                     "/assets/featured_events/minds_in_motion/session5/certificates/5.png",
                     "/assets/featured_events/minds_in_motion/session5/certificates/6.png",
                     "/assets/featured_events/minds_in_motion/session5/certificates/7.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/8.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/9.png",
                 ]
             },
         ],
