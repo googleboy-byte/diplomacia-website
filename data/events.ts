@@ -4,6 +4,7 @@ export interface EventSession {
     description: string;
     poster: string;
     videoUrl?: string;
+    certificates?: string[];
 }
 
 export interface FeaturedEvent {
@@ -55,6 +56,14 @@ export const featuredEvents: FeaturedEvent[] = [
                 description: "Unpacking the UGC Guidelines (2026) and what equity in higher education really means. Is inclusion at odds with merit — or can both coexist?",
                 poster: "/assets/featured_events/minds_in_motion/session4/session4_poster.png",
                 videoUrl: "https://youtu.be/KxVZwjQW1BY",
+                certificates: [
+                    "/assets/featured_events/minds_in_motion/session4/certificates/1.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/2.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/3.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/4.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/5.png",
+                    "/assets/featured_events/minds_in_motion/session4/certificates/6.png",
+                ]
             },
             {
                 title: "AI-Powered Phone Tracking",

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import { Users, Send, BookOpen } from "lucide-react";
 
 export default function Home() {
   const [selectedLogo, setSelectedLogo] = useState<{ file: string; name: string } | null>(null);
@@ -96,6 +97,68 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Strategic Portals Section */}
+      <section className="py-24 px-8 md:px-16 bg-midnight/10 border-b border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex-1 space-y-8 animate-fade-in-up">
+            <div className="space-y-4">
+              <h2 className="text-[10px] uppercase tracking-[0.5em] text-accent font-bold italic">Diplomatic Access</h2>
+              <h3 className="text-3xl md:text-5xl font-serif italic gold-text leading-tight">Strategic Portals</h3>
+            </div>
+            <p className="text-xs md:text-sm font-light leading-loose text-foreground/40 max-w-md uppercase tracking-[0.15em]">
+              Direct interfaces for active participation in the society's scholarly and organizational initiatives.
+            </p>
+          </div>
+
+          <div className="flex-[3] grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            <Link href="/membership" className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+              <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110">
+                <Users className="w-12 h-12 text-accent" />
+              </div>
+              <div className="relative z-10 space-y-4">
+                <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold italic">Enrollment Portal</p>
+                <h4 className="text-xl font-serif text-white group-hover:text-accent transition-colors duration-500">Join the Society</h4>
+                <div className="w-8 h-[1px] bg-accent/30 group-hover:w-full transition-all duration-700" />
+                <p className="text-[10px] uppercase tracking-widest text-foreground/50 leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  Apply for membership and gain access to the inner corridors of diplomatic discourse.
+                </p>
+              </div>
+            </Link>
+
+            <Link href="/events/minds-in-motion" className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+              <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110">
+                <BookOpen className="w-12 h-12 text-accent" />
+              </div>
+              <div className="relative z-10 space-y-4">
+                <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold italic">Perspective Forum</p>
+                <h4 className="text-xl font-serif text-white group-hover:text-accent transition-colors duration-500">Minds in Motion</h4>
+                <div className="w-8 h-[1px] bg-accent/30 group-hover:w-full transition-all duration-700" />
+                <p className="text-[10px] uppercase tracking-widest text-foreground/50 leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  Engage with our flagship debate series exploring diverse geopolitical themes and policy.
+                </p>
+              </div>
+            </Link>
+
+            <Link href="/events/position-paper-submit" className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+              <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110">
+                <Send className="w-12 h-12 text-accent" />
+              </div>
+              <div className="relative z-10 space-y-4">
+                <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold italic">Scholarly Portal</p>
+                <h4 className="text-xl font-serif text-white group-hover:text-accent transition-colors duration-500">Submit Manuscript</h4>
+                <div className="w-8 h-[1px] bg-accent/30 group-hover:w-full transition-all duration-700" />
+                <p className="text-[10px] uppercase tracking-widest text-foreground/50 leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  Lodge your position papers and research for peer review within the vault of thought.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Background glow Decor */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent/5 blur-[120px] rounded-full opacity-30 pointer-events-none" />
+      </section>
 
       {/* Pillars Section */}
       <section id="initiatives" className="py-40 px-8 md:px-16 relative overflow-hidden">
