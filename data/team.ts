@@ -70,6 +70,14 @@ export const team: TeamMember[] = [
         socials: { linkedin: "https://www.linkedin.com/in/anshikaa-asthana-924b403a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagram: "@anshika_2418", email: "anshikaa2418@gmail.com" },
     },
     {
+        name: "Jiya Gupta",
+        role: "Event Research",
+        image: "/assets/team/event-research/jiya-gupta.jpeg",
+        socials: {
+            linkedin: "https://www.linkedin.com/in/jiyaa-gupta-243a0838a/",
+        },
+    },
+    {
         name: "S V Preethi",
         role: "Creative Content (PoR)",
         image: "/assets/team/creative-content/s-v-preethi.jpeg",
