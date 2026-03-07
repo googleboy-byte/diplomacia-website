@@ -161,8 +161,8 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                                         </div>
                                     )}
 
-                                    {session.videoUrl && (
-                                        <div className="pt-2">
+                                    <div className="flex flex-wrap gap-4 pt-2">
+                                        {session.videoUrl && (
                                             <a
                                                 href={session.videoUrl}
                                                 target="_blank"
@@ -179,8 +179,27 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>
                                             </a>
-                                        </div>
-                                    )}
+                                        )}
+
+                                        {session.problemStatementUrl && (
+                                            <a
+                                                href={session.problemStatementUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group/link"
+                                            >
+                                                <span className="text-sm font-serif italic tracking-wider">Problem Statement</span>
+                                                <svg
+                                                    className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         );
