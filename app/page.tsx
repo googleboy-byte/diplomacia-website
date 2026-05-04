@@ -6,7 +6,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Users, Send, BookOpen } from "lucide-react";
+import { Users, Send, BookOpen, FileText } from "lucide-react";
 
 export default function Home() {
   const [selectedLogo, setSelectedLogo] = useState<{ file: string; name: string } | null>(null);
@@ -140,16 +140,16 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/events/position-paper-submit" className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+            <Link href="/events/ppa-archive" className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
               <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110">
-                <Send className="w-12 h-12 text-accent" />
+                <FileText className="w-12 h-12 text-accent" />
               </div>
               <div className="relative z-10 space-y-4">
                 <p className="text-[9px] uppercase tracking-[0.4em] text-accent font-bold italic">Scholarly Portal</p>
-                <h4 className="text-xl font-serif text-white group-hover:text-accent transition-colors duration-500">Submit Manuscript</h4>
+                <h4 className="text-xl font-serif text-white group-hover:text-accent transition-colors duration-500">View Papers</h4>
                 <div className="w-8 h-[1px] bg-accent/30 group-hover:w-full transition-all duration-700" />
                 <p className="text-[10px] uppercase tracking-widest text-foreground/50 leading-relaxed group-hover:text-foreground/80 transition-colors">
-                  Lodge your position papers and research for peer review within the vault of thought.
+                  Explore our curated archive of position papers, scholarly research, and strategic analyses.
                 </p>
               </div>
             </Link>
@@ -209,6 +209,53 @@ export default function Home() {
                 <div className="w-8 h-[1px] bg-accent/40 mb-8 group-hover:w-full transition-all duration-700" />
                 <p className="text-sm font-light text-foreground/60 leading-loose uppercase tracking-widest">{item.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Accreditations Preview Section */}
+      <section className="py-32 px-8 md:px-16 border-t border-white/5 relative overflow-hidden bg-midnight">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+          <div className="flex-1 space-y-6">
+            <h2 className="text-sm uppercase tracking-[0.5em] text-accent font-light">Honors & Recognition</h2>
+            <h3 className="text-4xl md:text-5xl font-serif italic gold-text">Certifications</h3>
+            <p className="text-sm md:text-base font-light text-foreground/60 leading-loose max-w-lg">
+              Explore our permanent registry of accreditations, core member standing, and certificates of merit awarded to distinction holders across our diverse diplomatic simulations and policy tracks.
+            </p>
+            <div className="pt-4">
+              <Link href="/certs" className="inline-block py-3 px-8 text-xs uppercase tracking-widest text-background font-bold bg-accent hover:bg-accent/80 transition-colors shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                Browse Archive
+              </Link>
+            </div>
+          </div>
+          
+          <div className="flex-[1.5] w-full grid grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Quick Teaser Grid */}
+            {[
+              "/assets/certs/core_member_certs/core certificates-1.pdf",
+              "/assets/certs/minds_in_motion_session4/1stposition.png",
+              "/assets/certs/minds_in_motion_session5/2ndposition.png",
+            ].map((cert, index) => (
+               <div key={index} className="aspect-[1.414/1] relative bg-white/5 border border-white/10 overflow-hidden shadow-2xl group">
+                 {cert.endsWith('.pdf') ? (
+                    <div className="absolute inset-0 z-10 overflow-hidden opacity-60 group-hover:opacity-100 transition-opacity duration-700">
+                      <iframe 
+                        src={`${cert}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 
+                        className="w-[102%] h-[102%] -top-[1%] -left-[1%] absolute pointer-events-none bg-white" 
+                        title="Teaser Certificate"
+                      />
+                    </div>
+                 ) : (
+                   <Image 
+                     src={cert}
+                     alt="Certificate Teaser"
+                     fill
+                     className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+                   />
+                 )}
+               </div>
             ))}
           </div>
         </div>
