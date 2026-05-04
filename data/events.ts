@@ -64,12 +64,12 @@ export const featuredEvents: FeaturedEvent[] = [
                 videoUrl: "https://youtu.be/KxVZwjQW1BY",
                 problemStatementUrl: "https://raw.githubusercontent.com/googleboy-byte/diplomacia-assets-public/7bbd33da1e34760b1d5ba9242cccf8a7b58c38a6/MiM%20Problem%20Statements/Minds%20in%20Motion%20Session%204%20%20Problem%20Statement.pdf",
                 certificates: [
-                    "/assets/featured_events/minds_in_motion/session4/certificates/1stposition.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/2ndposition.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/1.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/2.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/5.png",
-                    "/assets/featured_events/minds_in_motion/session4/certificates/6.png",
+                    "/assets/certs/minds_in_motion_session4/1stposition.png",
+                    "/assets/certs/minds_in_motion_session4/2ndposition.png",
+                    "/assets/certs/minds_in_motion_session4/1.png",
+                    "/assets/certs/minds_in_motion_session4/2.png",
+                    "/assets/certs/minds_in_motion_session4/5.png",
+                    "/assets/certs/minds_in_motion_session4/6.png",
                 ]
             },
             {
@@ -80,15 +80,15 @@ export const featuredEvents: FeaturedEvent[] = [
                 videoUrl: "https://www.youtube.com/watch?v=L2d2GNLVzFY",
                 problemStatementUrl: "https://raw.githubusercontent.com/googleboy-byte/diplomacia-assets-public/7bbd33da1e34760b1d5ba9242cccf8a7b58c38a6/MiM%20Problem%20Statements/Minds%20in%20Motion%20session5%20problem%20statement.pdf",
                 certificates: [
-                    "/assets/featured_events/minds_in_motion/session5/certificates/1stposition.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/2ndposition.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/1.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/2.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/3.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/4.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/5.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/6.png",
-                    "/assets/featured_events/minds_in_motion/session5/certificates/7.png",
+                    "/assets/certs/minds_in_motion_session5/1stposition.png",
+                    "/assets/certs/minds_in_motion_session5/2ndposition.png",
+                    "/assets/certs/minds_in_motion_session5/1.png",
+                    "/assets/certs/minds_in_motion_session5/2.png",
+                    "/assets/certs/minds_in_motion_session5/3.png",
+                    "/assets/certs/minds_in_motion_session5/4.png",
+                    "/assets/certs/minds_in_motion_session5/5.png",
+                    "/assets/certs/minds_in_motion_session5/6.png",
+                    "/assets/certs/minds_in_motion_session5/7.png",
                 ]
             },
         ],
@@ -112,4 +112,38 @@ export const featuredEvents: FeaturedEvent[] = [
             },
         ],
     },
+    {
+        slug: "research-x-debate",
+        title: "Research x Debate",
+        subtitle: "Exploring the intersections of analytical research and policy formulation",
+        description: "A specialized initiative challenging participants to defend their research findings through rigorous parliamentary debate and policy discourse.",
+        thumbnail: "/assets/featured_events/research_x_debate/poster.jpeg",
+        sessions: [
+            {
+                title: "Day 1 - Learn & Prepare",
+                description: "A short session to guide participants on how to approach topics, build compelling arguments with research backing, and master the art of structuring thoughts for debate presentations.",
+                poster: "/assets/featured_events/research_x_debate/poster.jpeg",
+                videoUrl: "https://www.youtube.com/watch?v=Rn3ynvZM9NY"
+            },
+            {
+                title: "Day 2 - Create & Present",
+                description: "Receive a topic on the spot, choose your stance (For or Against), prepare a PPT-based presentation, and present to judges for evaluation.",
+                poster: "/assets/featured_events/research_x_debate/poster.jpeg",
+                videoUrl: "https://www.youtube.com/watch?v=PKe0vk34Y0w"
+            },
+            {
+                title: "Day 3 - Compete & Win",
+                description: "Selected participants from Round 2 compete in head-to-head debate format with judges evaluating argumentation quality.",
+                poster: "/assets/featured_events/research_x_debate/poster.jpeg",
+                videoUrl: "https://www.youtube.com/watch?v=5iuUO9e1bG4"
+            }
+        ],
+        customCTAs: [
+            {
+                label: "View Brochure",
+                href: "/assets/featured_events/research_x_debate/brochure.pdf",
+                primary: true,
+            }
+        ]
+    }
 ];
