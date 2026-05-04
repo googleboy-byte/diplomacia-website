@@ -35,7 +35,7 @@ export default function PPAArchive() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
           {papers.map((paper) => (
-            <div key={paper.id} className="group p-8 md:p-12 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] flex flex-col md:flex-row gap-8 md:items-start items-stretch">
+            <div key={paper.id} className="group p-8 md:p-12 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] grid grid-cols-1 md:grid-cols-[1fr_256px] gap-8 md:items-start">
               
               {/* Paper Content */}
               <div className="flex-1 space-y-6">
@@ -61,7 +61,7 @@ export default function PPAArchive() {
               </div>
 
               {/* PDF Preview and Button */}
-              <div className="w-full md:w-64 shrink-0 flex flex-col gap-4 md:sticky md:top-32">
+              <div className="w-full flex flex-col gap-4 md:sticky md:top-32 relative z-10">
                 <div className="w-full aspect-[1/1.4] bg-white/5 border border-white/10 group-hover:border-accent/40 transition-all duration-500 overflow-hidden relative shadow-xl">
                   <iframe 
                     src={`${paper.pdfPath}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 
