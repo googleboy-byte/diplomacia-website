@@ -35,15 +35,15 @@ export default function PPAArchive() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
           {papers.map((paper) => (
-            <div key={paper.id} className="group p-8 md:p-12 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] flex flex-col md:flex-row gap-8 flex-col-reverse md:items-start items-stretch">
+            <div key={paper.id} className="group p-8 md:p-12 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-accent/40 transition-all duration-700 relative overflow-hidden hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] flex flex-col md:flex-row gap-8 md:items-start items-stretch">
               
               {/* Paper Content */}
               <div className="flex-1 space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold px-3 py-1 border border-accent/30 rounded-full bg-accent/10">
+                  <span className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold px-3 py-1 border border-accent/30 rounded-full bg-accent/10 whitespace-normal text-center">
                     {paper.category}
                   </span>
-                  <span className="text-xs text-foreground/50 font-light">Archive Ref: PPA-{paper.id}</span>
+                  <span className="text-xs text-foreground/50 font-light whitespace-nowrap">Archive Ref: PPA-{paper.id}</span>
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-serif text-white group-hover:text-accent transition-colors duration-500 leading-tight">
@@ -61,7 +61,7 @@ export default function PPAArchive() {
               </div>
 
               {/* PDF Preview and Button */}
-              <div className="md:w-64 shrink-0 flex flex-col gap-4 sticky top-32">
+              <div className="w-full md:w-64 shrink-0 flex flex-col gap-4 md:sticky md:top-32">
                 <div className="w-full aspect-[1/1.4] bg-white/5 border border-white/10 group-hover:border-accent/40 transition-all duration-500 overflow-hidden relative shadow-xl">
                   <iframe 
                     src={`${paper.pdfPath}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 

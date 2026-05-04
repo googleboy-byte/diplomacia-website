@@ -53,7 +53,7 @@ export default function CertificatesPage() {
       )}
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-8 md:px-16 lux-gradient overflow-hidden border-b border-white/5 relative">
+      <section className="pt-48 md:pt-40 pb-20 px-8 md:px-16 lux-gradient overflow-hidden border-b border-white/5 relative">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto space-y-6 relative z-10 text-center md:text-left">
           <h2 className="text-sm uppercase tracking-[0.5em] text-accent font-light">Accreditation & Honors</h2>
@@ -82,7 +82,7 @@ export default function CertificatesPage() {
                 )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pl-0 md:pl-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 pl-0 md:pl-16">
                 {category.certificates.map((cert, idx) => (
                   <div 
                     key={idx}
