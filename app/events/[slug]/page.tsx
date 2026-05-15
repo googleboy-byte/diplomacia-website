@@ -36,14 +36,22 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                         <X className="w-8 h-8" />
                     </button>
 
-                    <div className="relative w-full max-w-5xl aspect-[1.414/1] shadow-[0_0_100px_rgba(212,175,55,0.15)] animate-in zoom-in-95 duration-500">
-                        <Image
-                            src={selectedCert}
-                            alt="Certificate View"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+                    <div className="relative w-full max-w-5xl aspect-[1.414/1] shadow-[0_0_100px_rgba(212,175,55,0.15)] animate-in zoom-in-95 duration-500" onClick={(e) => e.stopPropagation()}>
+                        {selectedCert.toLowerCase().endsWith('.pdf') ? (
+                            <iframe 
+                                src={`${selectedCert}#view=FitH`} 
+                                className="w-full h-full border border-white/10 rounded-sm bg-white" 
+                                title="Certificate PDF"
+                            />
+                        ) : (
+                            <Image
+                                src={selectedCert}
+                                alt="Certificate View"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        )}
                     </div>
                 </div>
             )}
@@ -142,21 +150,34 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                                                 id={`cert-scroll-${index}`}
                                                 className="flex gap-4 overflow-x-auto pb-4 no-scrollbar snap-x scroll-smooth"
                                             >
-                                                {session.certificates.map((cert, certIdx) => (
-                                                    <div
-                                                        key={certIdx}
-                                                        onClick={() => setSelectedCert(cert)}
-                                                        className="relative w-48 aspect-[1.414/1] bg-midnight border border-white/10 shrink-0 snap-start group/cert cursor-zoom-in"
-                                                    >
-                                                        <Image
-                                                            src={cert}
-                                                            alt={`Certificate ${certIdx + 1}`}
-                                                            fill
-                                                            className="object-cover opacity-80 group-hover/cert:opacity-100 transition-opacity"
-                                                        />
-                                                        <div className="absolute inset-0 border border-accent/0 group-hover/cert:border-accent/20 transition-colors pointer-events-none" />
-                                                    </div>
-                                                ))}
+                                                {session.certificates.map((cert, certIdx) => {
+                                                    const isPdf = cert.toLowerCase().endsWith('.pdf');
+                                                    return (
+                                                        <div
+                                                            key={certIdx}
+                                                            onClick={() => setSelectedCert(cert)}
+                                                            className="relative w-48 aspect-[1.414/1] bg-midnight border border-white/10 shrink-0 snap-start group/cert cursor-zoom-in overflow-hidden"
+                                                        >
+                                                            {isPdf ? (
+                                                                <div className="absolute inset-0 z-10 overflow-hidden opacity-80 group-hover/cert:opacity-100 transition-opacity pointer-events-none">
+                                                                    <iframe 
+                                                                        src={`${cert}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=Fit`} 
+                                                                        className="w-[102%] h-[102%] -top-[1%] -left-[1%] absolute bg-white/80" 
+                                                                        title={`Certificate ${certIdx + 1}`}
+                                                                    />
+                                                                </div>
+                                                            ) : (
+                                                                <Image
+                                                                    src={cert}
+                                                                    alt={`Certificate ${certIdx + 1}`}
+                                                                    fill
+                                                                    className="object-cover opacity-80 group-hover/cert:opacity-100 transition-opacity"
+                                                                />
+                                                            )}
+                                                            <div className="absolute inset-0 border border-accent/0 group-hover/cert:border-accent/20 transition-colors pointer-events-none z-20" />
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
                                     )}

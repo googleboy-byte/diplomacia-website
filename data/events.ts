@@ -135,7 +135,16 @@ export const featuredEvents: FeaturedEvent[] = [
                 title: "Day 3 - Compete & Win",
                 description: "Selected participants from Round 2 compete in head-to-head debate format with judges evaluating argumentation quality.",
                 poster: "/assets/featured_events/research_x_debate/poster.jpeg",
-                videoUrl: "https://www.youtube.com/watch?v=5iuUO9e1bG4"
+                videoUrl: "https://www.youtube.com/watch?v=5iuUO9e1bG4",
+                certificates: [
+                    "/assets/certs/research_x_debate_certs/Ananya_Banerjee_1st.png",
+                    "/assets/certs/research_x_debate_certs/Sai_Jasmitha_Naidu_2nd.png",
+                    "/assets/certs/research_x_debate_certs/Ananya_Sree_Pentakota.jpeg",
+                    "/assets/certs/research_x_debate_certs/Jahanvi_Singh.jpeg",
+                    "/assets/certs/research_x_debate_certs/Nithikaa.jpeg",
+                    "/assets/certs/research_x_debate_certs/Ranjan_Kumar_Singh.jpeg",
+                    "/assets/certs/research_x_debate_certs/Vatsal_Gupta.jpeg",
+                ]
             }
         ],
         customCTAs: [
