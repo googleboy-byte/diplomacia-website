@@ -24,32 +24,46 @@ export const certCategories: CertCategory[] = [
     ]
   },
   {
-      categoryId: 'minds-in-motion-session5',
-      title: 'Minds in Motion: Session 5',
-      description: 'Awards and certificates of merit bridging diplomacy and technology on AI Tracking Systems.',
-      certificates: [
-          { path: "/assets/certs/minds_in_motion_session5/1stposition.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/2ndposition.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/1.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/2.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/3.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/4.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/5.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/6.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session5/7.png", type: 'image' },
-      ]
+    categoryId: 'research-x-debate',
+    title: 'Research x Debate',
+    description: 'Certificates of Merit and Excellence across various disciplines and policy research discussions.',
+    certificates: [
+      { path: "/assets/certs/research_x_debate_certs/Ananya_Banerjee_1st.png", type: 'image', label: '1st Position' },
+      { path: "/assets/certs/research_x_debate_certs/Sai_Jasmitha_Naidu_2nd.png", type: 'image', label: '2nd Position' },
+      { path: "/assets/certs/research_x_debate_certs/Ananya_Sree_Pentakota.jpeg", type: 'image' },
+      { path: "/assets/certs/research_x_debate_certs/Jahanvi_Singh.jpeg", type: 'image' },
+      { path: "/assets/certs/research_x_debate_certs/Nithikaa.jpeg", type: 'image' },
+      { path: "/assets/certs/research_x_debate_certs/Ranjan_Kumar_Singh.jpeg", type: 'image' },
+      { path: "/assets/certs/research_x_debate_certs/Vatsal_Gupta.jpeg", type: 'image' },
+    ]
   },
   {
-      categoryId: 'minds-in-motion-session4',
-      title: 'Minds in Motion: Session 4',
-      description: 'Recognizing discourse surrounding the UGC Guidelines and Equity in Higher Education.',
-      certificates: [
-          { path: "/assets/certs/minds_in_motion_session4/1stposition.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session4/2ndposition.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session4/1.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session4/2.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session4/5.png", type: 'image' },
-          { path: "/assets/certs/minds_in_motion_session4/6.png", type: 'image' },
-      ]
+    categoryId: 'minds-in-motion-session5',
+    title: 'Minds in Motion: Session 5',
+    description: 'Awards and certificates of merit bridging diplomacy and technology on AI Tracking Systems.',
+    certificates: [
+      { path: "/assets/certs/minds_in_motion_session5/1stposition.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/2ndposition.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/1.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/2.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/3.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/4.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/5.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/6.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session5/7.png", type: 'image' },
+    ]
+  },
+  {
+    categoryId: 'minds-in-motion-session4',
+    title: 'Minds in Motion: Session 4',
+    description: 'Recognizing discourse surrounding the UGC Guidelines and Equity in Higher Education.',
+    certificates: [
+      { path: "/assets/certs/minds_in_motion_session4/1stposition.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session4/2ndposition.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session4/1.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session4/2.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session4/5.png", type: 'image' },
+      { path: "/assets/certs/minds_in_motion_session4/6.png", type: 'image' },
+    ]
   }
 ];
